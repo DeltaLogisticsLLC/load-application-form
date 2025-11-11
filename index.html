@@ -85,7 +85,11 @@
 
 <div class="form-container">
   <h2>Load Application Form</h2>
-  <form id="dispatchForm" action="https://formsubmit.co/robert@deltalogisticsllc.com" method="POST">
+  <form id="dispatchForm" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="2003b606-b88f-496a-8c43-6e6ef0ac1a8f">
+
+    <!-- CC emails -->
+    <input type="hidden" name="cc" value="ops@deltalogisticsllc.com,mexico@deltalogisticsllc.com">
 
     <label for="load_number">Delta Logistics LLC Load Number:</label>
     <input type="text" name="load_number" id="load_number" pattern="\d{7}" maxlength="7" required placeholder="Enter 7-digit load number">
@@ -140,25 +144,25 @@
 
     <label for="eta_time">Pick-up time:</label>
     <input type="time" name="eta_time" id="eta_time" required>
-    
-    <!-- Hidden fields -->
-    <input type="hidden" name="_subject" value="New load submission [MX1]">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="">
-    <input type="hidden" name="_cc" value="ops@deltalogisticsllc.com,mexico@deltalogisticsllc.com">
+
+    <!-- Optional redirect or notifications -->
+    <input type="hidden" name="from_name" value="Delta Logistics LLC Form">
+    <input type="hidden" name="subject" value="New Load Application Submission">
+    <input type="hidden" name="replyto" value="robert@deltalogisticsllc.com">
+    <input type="hidden" name="redirect" value="https://deltalogisticsllc.com/thank-you.html">
 
     <button type="submit">Submit</button>
   </form>
 
   <div class="thank-you" id="thankYouMessage">
-  <h3>Thank you!</h3>
-  <p>
-    Please wait while the next available agent reviews your information and sends futher instructions.<br>
-    We truly appreciate your business.<br>
-    <strong>– Delta Logistics Compliance Team</strong>
-  </p>
-  <div style="font-size: 60px; color: green; margin-top: 20px;">&#10004;</div> <!-- Green check -->
-</div>
+    <h3>Thank you!</h3>
+    <p>
+      Please wait while the next available agent reviews your information and sends further instructions.<br>
+      We truly appreciate your business.<br>
+      <strong>– Delta Logistics Compliance Team</strong>
+    </p>
+    <div style="font-size: 60px; color: green; margin-top: 20px;">&#10004;</div>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
